@@ -15,6 +15,8 @@ export const metadata = {
     "Shanmukeshwar is a full-stack developer with 3 years of experience.",
 };
 
+export const runtime = "edge";
+
 export default function RootLayout({
   children,
 }: {
