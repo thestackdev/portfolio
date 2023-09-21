@@ -1,4 +1,4 @@
-import corpcommentImg from "@/public/corpcomment.png";
+import corpcommentImg from "@/public/discord.png";
 import rmtdevImg from "@/public/rmtdev.png";
 import wordanalyticsImg from "@/public/wordanalytics.png";
 import React from "react";
@@ -35,73 +35,58 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Graduated bootcamp",
-    location: "Miami, FL",
+    title: "Bachelor of Technology Graduation",
+    location: "Telanagana, India",
     description:
-      "I graduated after 6 months of studying. I immediately found a job as a front-end developer.",
+      "Graduated with a B.Tech degree in Electronics and Communication Engineering.",
     icon: React.createElement(LuGraduationCap),
-    date: "2019",
+    date: "2018 - 2022",
   },
   {
-    title: "Front-End Developer",
-    location: "Orlando, FL",
+    title: "Full-Stack Developer Intern",
+    location: "Opencubicles, India",
     description:
-      "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
+      "Completed a one-year Fullstack Developer Internship at OpenCubicles Technologies. Collaborated with experienced developers, contributing to real-world projects and refining my skills.",
     icon: React.createElement(CgWorkAlt),
-    date: "2019 - 2021",
+    date: "2021 - 2022",
   },
   {
     title: "Full-Stack Developer",
-    location: "Houston, TX",
+    location: "Opencubicles, India",
     description:
-      "I'm now a full-stack developer working as a freelancer. My stack includes React, Next.js, TypeScript, Tailwind, Prisma and MongoDB. I'm open to full-time opportunities.",
+      "Transitioned to a full-time role as a Fullstack Developer at OpenCubicles Technologies India. Continuing to apply my expertise and passion for development to create innovative solutions and make a meaningful impact within the company.",
     icon: React.createElement(FaReact),
-    date: "2021 - present",
+    date: "2022 - present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CorpComment",
+    title: "Discord Clone",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["React", "Next.js", "MongoDB", "Tailwind", "Prisma"],
+      "A recreation of the popular chat and voice platform for seamless real-time communication.",
+    tags: [
+      "Next.js",
+      "Postrgesql",
+      "Tailwind",
+      "prisma",
+      "Typescript",
+      "socket.io",
+    ],
     imageUrl: corpcommentImg,
-  },
-  {
-    title: "rmtDev",
-    description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
-  },
-  {
-    title: "Word Analytics",
-    description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
   },
 ] as const;
 
 export const skillsData = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
   "React",
-  "Next.js",
-  "Node.js",
+  "TypeScript",
   "Git",
   "Tailwind",
-  "Prisma",
-  "MongoDB",
-  "Redux",
-  "GraphQL",
-  "Apollo",
-  "Express",
-  "PostgreSQL",
-  "Python",
-  "Django",
-  "Framer Motion",
+  "DevOps",
+  "Web development",
+  "Database Administration",
+  "Data Structures",
+  "Microservices",
+  "Linux Administration",
+  "Cloud computing",
 ] as const;

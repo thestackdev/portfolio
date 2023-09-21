@@ -18,30 +18,23 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in{" "}
-        <span className="font-medium">Accounting</span>, I decided to pursue my
-        passion for programming. I enrolled in a coding bootcamp and learned{" "}
-        <span className="font-medium">full-stack web development</span>.{" "}
-        <span className="italic">My favorite part of programming</span> is the
-        problem-solving aspect. I <span className="underline">love</span> the
-        feeling of finally figuring out a solution to a problem. My core stack
-        is{" "}
-        <span className="font-medium">
-          React, Next.js, Node.js, and MongoDB
+        After graduating with a degree in with a Bachelor's degree in{" "}
+        <span className="font-semibold">
+          Electronics and Communication Engineering.{" "}
         </span>
-        . I am also familiar with TypeScript and Prisma. I am always looking to
-        learn new technologies. I am currently looking for a{" "}
-        <span className="font-medium">full-time position</span> as a software
-        developer.
+        My journey in technology has been fueled by a relentless curiosity and a
+        desire to create <span className="font-semibold">innovative</span>{" "}
+        solutions. With over <span className="font-semibold">three years</span>{" "}
+        of practical experience, I've cultivated expertise in front-end and
+        back-end development, DevOps tools, cloud technologies, and Linux
+        systems.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies, and playing with my dog. I also enjoy{" "}
-        <span className="font-medium">learning new things</span>. I am currently
-        learning about{" "}
-        <span className="font-medium">history and philosophy</span>. I'm also
-        learning how to play the guitar.
+        Beyond coding, I'm an avid{" "}
+        <span className="font-semibold">tech enthusiast</span> who loves staying
+        updated with the latest industry trends. I thrive on new challenges and
+        believe in pushing the boundaries of what technology can achieve.
       </p>
     </motion.section>
   );

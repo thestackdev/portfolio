@@ -39,7 +39,6 @@ export default function Intro() {
               className="h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
             />
           </motion.div>
-
           <motion.span
             className="absolute bottom-0 right-0 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
@@ -61,13 +60,12 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-bold">Hello, I'm Shanmukeshwar.</span> I'm a{" "}
-        <span className="font-bold">full-stack developer</span> with{" "}
-        <span className="font-bold">8 years</span> of experience. I enjoy
-        building <span className="italic">sites & apps</span>. My focus is{" "}
-        <span className="underline">React (Next.js)</span>.
+        Hello, I'm <span className="font-bold">Shanmukeshwar</span>, a dedicated
+        <span className="font-bold">full-stack developer</span>. With over{" "}
+        <span className="font-bold">three years</span> of practical experience,
+        I'm eager to dive into fresh tech challenges and transform concepts into
+        practical solutions.
       </motion.h1>
-
       <motion.div
         className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
         initial={{ opacity: 0, y: 100 }}
