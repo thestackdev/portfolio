@@ -2,12 +2,36 @@
 
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import toast from "react-hot-toast";
 import SectionHeading from "./section-heading";
 import SubmitBtn from "./submit-btn";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
+  const [form, setForm] = useState({
+    senderEmail: "",
+    message: "",
+  });
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const res = await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify(form),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (res.status === 200) {
+      toast.success("Message sent!");
+      setForm({ senderEmail: "", message: "" });
+    } else {
+      toast.error("Message failed to send.");
+    }
+  }
 
   return (
     <motion.section
@@ -39,16 +63,7 @@ export default function Contact() {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          // const { data, error } = await sendEmail(formData);
-
-          // if (error) {
-          //   toast.error(error);
-          //   return;
-          // }
-
-          toast.success("Email sent successfully!");
-        }}
+        onSubmit={handleSubmit}
       >
         <input
           className="borderBlack h-14 rounded-lg px-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
@@ -57,6 +72,8 @@ export default function Contact() {
           required
           maxLength={500}
           placeholder="Your email"
+          value={form.senderEmail}
+          onChange={(e) => setForm({ ...form, senderEmail: e.target.value })}
         />
         <textarea
           className="borderBlack my-3 h-52 rounded-lg p-4 transition-all dark:bg-white dark:bg-opacity-80 dark:outline-none dark:focus:bg-opacity-100"
@@ -64,6 +81,8 @@ export default function Contact() {
           placeholder="Your message"
           required
           maxLength={5000}
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
         />
         <SubmitBtn />
       </form>
