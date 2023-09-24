@@ -1,26 +1,43 @@
 import ContactFormEmail from "@/email/contact-form-email";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { Resend } from "resend";
+import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (request: Request) => {
   try {
-    const { senderEmail, message } = req.body;
+    const { senderEmail, message } = await request.json();
 
     if (!senderEmail || !message) {
       throw new Error("Missing message or email");
     }
 
-    const data = await resend.emails.send({
-      from: "Contact Form <hello@shanmukeshwar.dev>",
-      to: ["shanmukeshwar03@gmail.com"],
-      subject: "Message from contact form",
-      react: ContactFormEmail({ message, senderEmail }),
+    const res = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      },
+      body: JSON.stringify({
+        from: "Contact Form <hello@shanmukeshwar.dev>",
+        to: ["shanmukeshwar03@gmail.com"],
+        subject: "Message from contact form",
+        html: ContactFormEmail({ message, senderEmail }),
+      }),
     });
 
-    res.status(200).json(data);
+    if (res.ok) {
+      const data = await res.json();
+      return NextResponse.json(data);
+    } else {
+      const data = await res.json();
+      throw new Error(data.error);
+    }
   } catch (error) {
-    res.status(400).json(error);
+    const e = error as Error;
+    return new Response(JSON.stringify(e.message), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 };
