@@ -2,10 +2,10 @@
 
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import SectionHeading from "./section-heading";
-import SubmitBtn from "./submit-btn";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import SectionHeading from "./section-heading";
+import SubmitBtn from "./submit-btn";
 
 export default function Contact() {
   const { ref } = useSectionInView("Contact");
@@ -13,9 +13,12 @@ export default function Contact() {
     senderEmail: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    setLoading(true);
 
     const res = await fetch("/api/send", {
       method: "POST",
@@ -31,6 +34,8 @@ export default function Contact() {
     } else {
       toast.error("Message failed to send.");
     }
+
+    setLoading(false);
   }
 
   return (
@@ -84,7 +89,7 @@ export default function Contact() {
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
         />
-        <SubmitBtn />
+        <SubmitBtn loading={loading} />
       </form>
     </motion.section>
   );
