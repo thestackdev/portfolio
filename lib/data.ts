@@ -1,6 +1,5 @@
-import corpcommentImg from "@/public/discord.png";
-import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import discordant from "@/public/discord.png";
+import multewayImage from "@/public/multeway.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
@@ -62,7 +61,7 @@ export const experiencesData = [
 
 export const projectsData = [
   {
-    title: "Discord Clone",
+    title: "Discordant",
     description:
       "A recreation of the popular chat and voice platform for seamless real-time communication.",
     tags: [
@@ -73,7 +72,22 @@ export const projectsData = [
       "Typescript",
       "socket.io",
     ],
-    imageUrl: corpcommentImg,
+    imageUrl: discordant,
+  },
+  {
+    title: "Multeway",
+    description:
+      "Connecting people with similar interests and hobbies to create a community.",
+    tags: [
+      "Next.js",
+      "Postrgesql",
+      "Tailwind",
+      "drizzle ORM",
+      "sst",
+      "firebase",
+      "socket.io",
+    ],
+    imageUrl: multewayImage,
   },
 ] as const;
 
