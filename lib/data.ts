@@ -1,5 +1,6 @@
 import discordant from "@/public/discord.png";
 import multewayImage from "@/public/multeway.png";
+import redder from "@/public/redder.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
@@ -73,6 +74,20 @@ export const projectsData = [
       "socket.io",
     ],
     imageUrl: discordant,
+  },
+  {
+    title: "Redder",
+    description: "Where the best conversations on the internet happen",
+    tags: [
+      "Next.js",
+      "Postrgesql",
+      "Tailwind",
+      "Prisma",
+      "sst",
+      "shadcn",
+      "redis",
+    ],
+    imageUrl: redder,
   },
   {
     title: "Multeway",
