@@ -1,9 +1,6 @@
-import discordant from "@/public/discord.png";
-import multewayImage from "@/public/multeway.png";
-import redder from "@/public/redder.png";
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
+import { FaServer } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 
 export const links = [
@@ -35,87 +32,93 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Bachelor of Technology Graduation",
-    location: "Telanagana, India",
+    title: "Bachelor of Technology",
+    location: "Telangana, India",
     description:
       "Graduated with a B.Tech degree in Electronics and Communication Engineering.",
     icon: React.createElement(LuGraduationCap),
     date: "2018 - 2022",
   },
   {
-    title: "Full-Stack Developer Intern",
-    location: "Opencubicles, India",
+    title: "Full-Stack Developer",
+    location: "OpenCubicles Technologies",
     description:
-      "Completed a one-year Fullstack Developer Internship at OpenCubicles Technologies. Collaborated with experienced developers, contributing to real-world projects and refining my skills.",
+      "Developed a Shopify upsell/downsell plugin with a React-based drag-and-drop Builder to optimize post-checkout recommendations. Built web applications with React, Node.js, and cloud technologies.",
     icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2022",
+    date: "Jun 2021 - May 2024",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Opencubicles, India",
+    title: "Head of Technology",
+    location: "AroundMe",
     description:
-      "Transitioned to a full-time role as a Fullstack Developer at OpenCubicles Technologies India. Continuing to apply my expertise and passion for development to create innovative solutions and make a meaningful impact within the company.",
-    icon: React.createElement(FaReact),
-    date: "2022 - present",
+      "Led development of AroundMe app tech stack using React Native and FastAPI. Architected distributed system with PostgreSQL, Redis cluster, Elasticsearch, Neo4j, and ML pipelines. Scaled to 65K+ downloads across Play Store and App Store.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Jun 2024 - Mar 2025",
+  },
+  {
+    title: "Senior Software Development Engineer",
+    location: "Arrowhead",
+    description:
+      "Architecting conversational AI platform with real-time voice processing, multi-LLM orchestration (10+ providers), WASM plugin system in Rust, and multi-region AWS infrastructure with Kubernetes.",
+    icon: React.createElement(FaServer),
+    date: "Mar 2025 - Present",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "Discordant",
+    title: "Enterprise Conversational AI Platform",
     description:
-      "A recreation of the popular chat and voice platform for seamless real-time communication.",
+      "Multi-tenant voice AI platform with HMAC authentication, hash-partitioned PostgreSQL, 57 WASM plugins in Rust (Extism), real-time voice pipeline (Deepgram + ElevenLabs), and multi-LLM orchestration across 10+ providers.",
     tags: [
-      "Next.js",
-      "Postrgesql",
-      "Tailwind",
-      "prisma",
-      "Typescript",
-      "socket.io",
+      "Python",
+      "Rust",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Kubernetes",
+      "System Design",
     ],
-    imageUrl: discordant,
   },
   {
-    title: "Redder",
-    description: "Where the best conversations on the internet happen",
+    title: "AroundMe - Location-Based Social Platform",
+    description:
+      "Distributed backend with FastAPI, PostgreSQL, Redis cluster (master + 3 slaves), Elasticsearch for geospatial queries, Neo4j for social graph, and ML-powered recommendations. Kubernetes deployment with GitOps. 65K+ downloads.",
     tags: [
-      "Next.js",
-      "Postrgesql",
-      "Tailwind",
-      "Prisma",
-      "sst",
-      "shadcn",
-      "redis",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Elasticsearch",
+      "Neo4j",
+      "Kafka",
+      "Kubernetes",
     ],
-    imageUrl: redder,
   },
   {
-    title: "Multeway",
+    title: "Rust CLI Tooling",
     description:
-      "Connecting people with similar interests and hobbies to create a community.",
-    tags: [
-      "Next.js",
-      "Postrgesql",
-      "Tailwind",
-      "drizzle ORM",
-      "sst",
-      "firebase",
-      "socket.io",
-    ],
-    imageUrl: multewayImage,
+      "Cargo workspace with 7 CLI tools for deployment automation and plugin management. Features Tokio async runtime, Google OAuth2 with token persistence, builder-pattern HTTP client, and unified error handling across the workspace.",
+    tags: ["Rust", "Tokio", "OAuth2", "CLI", "Async", "Cargo Workspace"],
   },
 ] as const;
 
 export const skillsData = [
-  "React",
-  "TypeScript",
-  "Git",
-  "Tailwind",
-  "DevOps",
-  "Web development",
-  "Database Administration",
-  "Data Structures",
+  "Rust",
+  "WebAssembly (WASM)",
+  "Tokio",
+  "Extism",
+  "System Design",
+  "Distributed Systems",
   "Microservices",
-  "Linux Administration",
-  "Cloud computing",
+  "Python",
+  "FastAPI",
+  "PostgreSQL",
+  "Redis",
+  "Kafka",
+  "Elasticsearch",
+  "AWS",
+  "Kubernetes",
+  "Terraform",
+  "HMAC Authentication",
+  "JWT",
 ] as const;

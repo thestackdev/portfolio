@@ -18,23 +18,36 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a degree in with a Bachelor's degree in{" "}
-        <span className="font-semibold">
-          Electronics and Communication Engineering.{" "}
-        </span>
-        My journey in technology has been fueled by a relentless curiosity and a
-        desire to create <span className="font-semibold">innovative</span>{" "}
-        solutions. With over <span className="font-semibold">three years</span>{" "}
-        of practical experience, I've cultivated expertise in front-end and
-        back-end development, DevOps tools, cloud technologies, and Linux
-        systems.
+        After graduating in{" "}
+        <span className="font-semibold">Electronics Engineering</span>, I've
+        spent <span className="font-semibold">4+ years</span> building systems
+        at scale with <span className="font-semibold">Python</span> and{" "}
+        <span className="font-semibold">Rust</span>.
+      </p>
+
+      <p className="mb-3">
+        At AroundMe (Head of Technology), I architected a distributed backend
+        with PostgreSQL, Redis cluster (master + 3 slaves), Elasticsearch for
+        geospatial queries, and Neo4j for social graph. Scaled to{" "}
+        <span className="font-semibold">65K+ users</span> with ML-powered
+        recommendations and Kubernetes deployment via GitOps.
+      </p>
+
+      <p className="mb-3">
+        Currently at Arrowhead, I design enterprise AI infrastructure:
+        multi-tenant APIs with hash-partitioned PostgreSQL, HMAC authentication
+        with replay attack prevention, and{" "}
+        <span className="font-semibold">57 WASM plugins in Rust</span> (Extism
+        framework) enabling hot-swappable business logic. Also built{" "}
+        <span className="font-semibold">7 Rust CLI tools</span> for deployment
+        and plugin management using Tokio async runtime.
       </p>
 
       <p>
-        Beyond coding, I'm an avid{" "}
-        <span className="font-semibold">tech enthusiast</span> who loves staying
-        updated with the latest industry trends. I thrive on new challenges and
-        believe in pushing the boundaries of what technology can achieve.
+        I focus on <span className="font-semibold">Rust</span>,{" "}
+        <span className="font-semibold">system design</span>,{" "}
+        <span className="font-semibold">distributed systems</span>, and building
+        backends that scale.
       </p>
     </motion.section>
   );

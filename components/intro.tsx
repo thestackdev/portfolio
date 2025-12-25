@@ -60,11 +60,16 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        Hello, I'm <span className="font-bold">Shanmukeshwar</span>, a dedicated{" "}
-        <span className="font-bold">full-stack developer</span>. With over{" "}
-        <span className="font-bold">three years</span> of practical experience,
-        I'm eager to dive into fresh tech challenges and transform concepts into
-        practical solutions.
+        Hello, I'm <span className="font-bold">Shanmukeshwar</span>, a{" "}
+        <span className="font-bold">Senior Software Development Engineer</span>{" "}
+        at Arrowhead, building distributed systems with{" "}
+        <span className="font-bold">Python</span> and{" "}
+        <span className="font-bold">Rust</span>. I've designed{" "}
+        <span className="font-bold">57 WASM plugins in Rust</span>,
+        multi-tenant platforms with hash-partitioned databases, and real-time
+        AI pipelines. Passionate about{" "}
+        <span className="font-bold">systems programming</span> and backend
+        architecture.
       </motion.h1>
       <motion.div
         className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
