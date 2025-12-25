@@ -1,7 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaServer } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
 
 export const links = [
   {
@@ -24,44 +23,40 @@ export const links = [
     name: "Experience",
     hash: "#experience",
   },
-  {
-    name: "Contact",
-    hash: "#contact",
-  },
 ] as const;
 
 export const experiencesData = [
   {
-    title: "Bachelor of Technology",
-    location: "Telangana, India",
+    title: "Senior Software Development Engineer",
+    location: "Arrowhead",
     description:
-      "Graduated with a B.Tech degree in Electronics and Communication Engineering.",
-    icon: React.createElement(LuGraduationCap),
-    date: "2018 - 2022",
+      "Architecting conversational AI platform with 57 WASM plugins in Rust (Extism), 7 Rust CLI tools with Tokio, real-time voice processing, multi-LLM orchestration (10+ providers), and multi-region AWS infrastructure with Kubernetes.",
+    icon: React.createElement(FaServer),
+    date: "Mar 2025 - Present",
   },
   {
-    title: "Full-Stack Developer",
-    location: "OpenCubicles Technologies",
+    title: "Founding Engineer & Head of Technology",
+    location: "AroundMe (Closed)",
     description:
-      "Developed a Shopify upsell/downsell plugin with a React-based drag-and-drop Builder to optimize post-checkout recommendations. Built web applications with React, Node.js, and cloud technologies.",
-    icon: React.createElement(CgWorkAlt),
-    date: "Jun 2021 - May 2024",
-  },
-  {
-    title: "Head of Technology",
-    location: "AroundMe",
-    description:
-      "Led development of AroundMe app tech stack using React Native and FastAPI. Architected distributed system with PostgreSQL, Redis cluster, Elasticsearch, Neo4j, and ML pipelines. Scaled to 65K+ downloads across Play Store and App Store.",
+      "Founded and led team of 10 building AroundMe app with React Native and FastAPI. Architected distributed system with PostgreSQL, Redis cluster, Elasticsearch, Neo4j, and ML pipelines. Scaled to 65K+ downloads across Play Store and App Store.",
     icon: React.createElement(CgWorkAlt),
     date: "Jun 2024 - Mar 2025",
   },
   {
-    title: "Senior Software Development Engineer",
-    location: "Arrowhead",
+    title: "Software Development Engineer",
+    location: "OpenCubicles Technologies",
     description:
-      "Architecting conversational AI platform with real-time voice processing, multi-LLM orchestration (10+ providers), WASM plugin system in Rust, and multi-region AWS infrastructure with Kubernetes.",
-    icon: React.createElement(FaServer),
-    date: "Mar 2025 - Present",
+      "Built smart AC maintenance system with camera feeds, custom FTP server, and AWS Lambda pipeline for automated fault detection. Developed Shopify Builder Plugin with React drag-and-drop and bidirectional cross-iframe communication. Implemented Kafka event processing and Redis caching for real-time analytics.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Aug 2022 - May 2023",
+  },
+  {
+    title: "Software Development Engineer Intern",
+    location: "OpenCubicles Technologies",
+    description:
+      "Built offline-first React Native app for solar installations with WatermelonDB, facial recognition, and barcode scanning. Developed oil industry CRM with integrated eSign and collaboration tools. Created backend services with Django and Next.js with CI/CD pipelines.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Jun 2021 - Aug 2022",
   },
 ] as const;
 
@@ -83,7 +78,7 @@ export const projectsData = [
   {
     title: "AroundMe - Location-Based Social Platform",
     description:
-      "Distributed backend with FastAPI, PostgreSQL, Redis cluster (master + 3 slaves), Elasticsearch for geospatial queries, Neo4j for social graph, and ML-powered recommendations. Kubernetes deployment with GitOps. 65K+ downloads.",
+      "Founded and architected distributed backend with FastAPI, PostgreSQL, Redis cluster (master + 3 slaves), Elasticsearch for geospatial queries, Neo4j for social graph, and ML-powered recommendations. Led team of 10. Scaled to 65K+ downloads.",
     tags: [
       "FastAPI",
       "PostgreSQL",
@@ -95,6 +90,18 @@ export const projectsData = [
     ],
   },
   {
+    title: "Memli - AI-Powered Flashcard App",
+    description:
+      "React Native learning app with ML-generated mnemonics and YOLO computer vision to detect and explain textbook images. Built intelligent quiz system with personalized assessments and spaced repetition.",
+    tags: [
+      "React Native",
+      "YOLO",
+      "Machine Learning",
+      "Computer Vision",
+      "Mobile",
+    ],
+  },
+  {
     title: "Rust CLI Tooling",
     description:
       "Cargo workspace with 7 CLI tools for deployment automation and plugin management. Features Tokio async runtime, Google OAuth2 with token persistence, builder-pattern HTTP client, and unified error handling across the workspace.",
@@ -102,23 +109,11 @@ export const projectsData = [
   },
 ] as const;
 
-export const skillsData = [
-  "Rust",
-  "WebAssembly (WASM)",
-  "Tokio",
-  "Extism",
-  "System Design",
-  "Distributed Systems",
-  "Microservices",
-  "Python",
-  "FastAPI",
-  "PostgreSQL",
-  "Redis",
-  "Kafka",
-  "Elasticsearch",
-  "AWS",
-  "Kubernetes",
-  "Terraform",
-  "HMAC Authentication",
-  "JWT",
-] as const;
+export const skillsData = {
+  Languages: ["Rust", "Python", "TypeScript"],
+  "Rust Ecosystem": ["Tokio", "WebAssembly", "Extism", "Cargo"],
+  Backend: ["FastAPI", "SQLAlchemy", "Temporal"],
+  Databases: ["PostgreSQL", "Redis", "Elasticsearch", "Neo4j"],
+  Infrastructure: ["AWS", "Kubernetes", "Terraform", "Docker"],
+  Architecture: ["System Design", "Distributed Systems", "Microservices"],
+} as const;

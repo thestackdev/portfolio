@@ -2,21 +2,21 @@
 
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
-import React from "react";
 import Project from "./project";
-import SectionHeading from "./section-heading";
 
 export default function Projects() {
   const { ref } = useSectionInView("Projects", 0.5);
 
   return (
-    <section ref={ref} id="projects" className="mb-28 scroll-mt-28">
-      <SectionHeading>My projects</SectionHeading>
-      <div>
+    <section
+      ref={ref}
+      id="projects"
+      className="mx-auto max-w-3xl scroll-mt-28 py-20"
+    >
+      <h2 className="section-heading">Projects</h2>
+      <div className="grid gap-4 sm:grid-cols-2">
         {projectsData.map((project, index) => (
-          <React.Fragment key={index}>
-            <Project {...project} />
-          </React.Fragment>
+          <Project key={index} {...project} />
         ))}
       </div>
     </section>

@@ -1,8 +1,12 @@
 export default function Footer() {
   return (
-    <footer className="mb-10 px-4 text-center text-gray-500">
-      <small className="mb-2 block text-xs">
-        &copy; 2023 Shanmukeshwar. All rights reserved.
+    <footer className="mx-auto max-w-3xl px-4 py-12 text-center">
+      <div className="mb-6 h-px w-full bg-border-subtle"></div>
+      <p className="mb-4 text-xs text-text-muted">
+        Certifications: GitHub Foundations · Microsoft AI · IBM Cloud Essentials
+      </p>
+      <small className="block text-xs text-text-muted">
+        &copy; {new Date().getFullYear()} Shanmukeshwar
       </small>
     </footer>
   );

@@ -1,119 +1,96 @@
 "use client";
 
-import { useActiveSectionContext } from "@/context/active-section-context";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { BsArrowRight, BsLinkedin } from "react-icons/bs";
-import { FaGithubSquare } from "react-icons/fa";
-import { HiDownload } from "react-icons/hi";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { HiOutlineMail } from "react-icons/hi";
+import { SiLeetcode } from "react-icons/si";
 
 export default function Intro() {
   const { ref } = useSectionInView("Home", 0.5);
-  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
   return (
     <section
       ref={ref}
       id="home"
-      className="mb-28 max-w-[50rem] scroll-mt-[100rem] text-center sm:mb-0"
+      className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center py-20"
     >
-      <div className="flex items-center justify-center">
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "tween",
-              duration: 0.2,
-            }}
-          >
-            <Image
-              src="https://avatars.githubusercontent.com/u/49651332"
-              alt="Shanmukeshwar portrait"
-              width="192"
-              height="192"
-              quality="95"
-              priority={true}
-              className="h-24 w-24 rounded-full border-[0.35rem] border-white object-cover shadow-xl"
-            />
-          </motion.div>
-          <motion.span
-            className="absolute bottom-0 right-0 text-4xl"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 125,
-              delay: 0.1,
-              duration: 0.7,
-            }}
-          >
-            👋
-          </motion.span>
-        </div>
-      </div>
-
-      <motion.h1
-        className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        Hello, I'm <span className="font-bold">Shanmukeshwar</span>, a{" "}
-        <span className="font-bold">Senior Software Development Engineer</span>{" "}
-        at Arrowhead, building distributed systems with{" "}
-        <span className="font-bold">Python</span> and{" "}
-        <span className="font-bold">Rust</span>. I've designed{" "}
-        <span className="font-bold">57 WASM plugins in Rust</span>,
-        multi-tenant platforms with hash-partitioned databases, and real-time
-        AI pipelines. Passionate about{" "}
-        <span className="font-bold">systems programming</span> and backend
-        architecture.
-      </motion.h1>
       <motion.div
-        className="flex flex-col items-center justify-center gap-2 px-4 text-lg font-medium sm:flex-row"
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.1,
-        }}
+        transition={{ duration: 0.5 }}
       >
-        <Link
-          href="#contact"
-          className="group flex items-center gap-2 rounded-full bg-gray-900 px-7 py-3 text-white outline-none transition hover:scale-110 hover:bg-gray-950 focus:scale-110 active:scale-105"
-          onClick={() => {
-            setActiveSection("Contact");
-            setTimeOfLastClick(Date.now());
-          }}
-        >
-          Contact me here{" "}
-          <BsArrowRight className="opacity-70 transition group-hover:translate-x-1" />
-        </Link>
+        <h1 className="text-4xl font-bold text-text-primary sm:text-5xl">
+          Shanmukeshwar
+        </h1>
+        <div className="mt-2 h-0.5 w-16 bg-accent"></div>
+      </motion.div>
 
-        <a
-          className="borderBlack group flex cursor-pointer items-center gap-2 rounded-full bg-white px-7 py-3 outline-none transition hover:scale-110 focus:scale-110 active:scale-105 dark:bg-white/10"
-          href="/CV.pdf"
-          download
-        >
-          Download CV{" "}
-          <HiDownload className="opacity-60 transition group-hover:translate-y-1" />
-        </a>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        className="mt-6"
+      >
+        <p className="text-xl text-text-secondary">
+          Senior Software Development Engineer
+        </p>
+        <p className="mt-2 flex items-center gap-2 text-text-muted">
+          Rust <span className="text-accent">·</span> Distributed Systems{" "}
+          <span className="text-accent">·</span> Backend Architecture
+        </p>
+      </motion.div>
 
-        <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
-          href="https://linkedin.com/in/shanmukeshwar"
-          target="_blank"
-        >
-          <BsLinkedin />
-        </a>
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mt-8 max-w-xl leading-relaxed text-text-secondary"
+      >
+        Building distributed systems with Python and Rust. Designed 57 WASM
+        plugins, multi-tenant platforms with hash-partitioned databases, and
+        real-time AI pipelines.
+      </motion.p>
 
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="mt-8 flex items-center gap-4"
+      >
         <a
-          className="borderBlack flex cursor-pointer items-center gap-2 rounded-full bg-white p-4 text-[1.35rem] text-gray-700 transition hover:scale-[1.15] hover:text-gray-950 focus:scale-[1.15] active:scale-105 dark:bg-white/10 dark:text-white/60"
           href="https://github.com/thestackdev"
           target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
         >
-          <FaGithubSquare />
+          <BsGithub className="text-xl" />
+          <span className="text-sm">GitHub</span>
+        </a>
+        <a
+          href="https://linkedin.com/in/shanmukeshwar"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
+        >
+          <BsLinkedin className="text-xl" />
+          <span className="text-sm">LinkedIn</span>
+        </a>
+        <a
+          href="https://leetcode.com/u/shanmukeshwar/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
+        >
+          <SiLeetcode className="text-xl" />
+          <span className="text-sm">LeetCode</span>
+        </a>
+        <a
+          href="mailto:shanmukeshwar03@gmail.com"
+          className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
+        >
+          <HiOutlineMail className="text-xl" />
+          <span className="text-sm">Email</span>
         </a>
       </motion.div>
     </section>
