@@ -1,8 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import ThemeSwitch from "@/components/theme-switch";
 import ActiveSectionContextProvider from "@/context/active-section-context";
-import ThemeContextProvider from "@/context/theme-context";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -26,14 +24,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-bg-primary text-text-secondary antialiased`}
       >
-        <ThemeContextProvider>
-          <ActiveSectionContextProvider>
-            <Header />
-            <main className="px-4">{children}</main>
-            <Footer />
-            <ThemeSwitch />
-          </ActiveSectionContextProvider>
-        </ThemeContextProvider>
+        <ActiveSectionContextProvider>
+          <Header />
+          <main className="px-4">{children}</main>
+          <Footer />
+        </ActiveSectionContextProvider>
       </body>
     </html>
   );
