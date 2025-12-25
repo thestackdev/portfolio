@@ -1,132 +1,181 @@
-# Portfolio - Claude Code Instructions
+# Shanmukeshwar - Portfolio & Resume
 
 ## Owner
-**Shanmukeshwar** - Senior Software Development Engineer
+**Danaboina Shanmukeshwar** - Senior Software Development Engineer at Arrowhead
 
-## Target Positioning
-- **Primary Focus**: Rust, System Design, Distributed Systems, Backend Architecture
-- **Future Goal**: Rust-focused roles
-- **Languages**: Rust (primary), Python (secondary)
+**Contact:**
+- Email: shanmukeshwar03@gmail.com
+- Phone: 7995235525
+- Location: Bangalore, India (Open to Relocate)
+- Portfolio: https://shanmukeshwar.dev
+- LinkedIn: https://linkedin.com/in/shanmukeshwar
+- GitHub: https://github.com/thestackdev
 
 ---
 
-## Rules
+## Target Positioning
+
+**Role:** Senior Software Development Engineer / Senior Backend Engineer
+
+**Primary Focus:**
+- Rust (WASM plugins, CLI tools, systems programming)
+- System Design & Distributed Systems
+- Backend Architecture at Scale
+
+**Languages:** Rust (primary), Python (secondary), TypeScript
+
+**Future Goal:** Rust-focused roles
+
+---
+
+## Technical Achievements
+
+### Arrowhead (Current - Mar 2025 to Present)
+
+| Achievement | Details |
+|-------------|---------|
+| WASM Plugins | 57 domain-specific plugins in Rust using Extism framework |
+| Rust CLI Tools | 7 CLI tools with Tokio async runtime, OAuth2, builder-pattern HTTP client |
+| Multi-Tenant API | Hash-partitioned PostgreSQL, composite primary keys for tenant isolation |
+| Authentication | HMAC-SHA256 with replay attack prevention (nonce store), JWT blacklisting |
+| Voice Pipeline | Real-time with Deepgram STT, ElevenLabs TTS |
+| LLM Orchestration | 10+ providers via LiteLLM |
+| Infrastructure | Multi-region AWS, Kubernetes deployment |
+
+### AroundMe (Closed - Jun 2024 to Mar 2025)
+
+| Achievement | Details |
+|-------------|---------|
+| Role | Founding Engineer & Head of Technology |
+| Team | Led team of 10 engineers |
+| Scale | 65K+ downloads across Play Store and App Store |
+| Backend | FastAPI, PostgreSQL, Redis cluster (master + 3 slaves) |
+| Search | Elasticsearch for geospatial queries |
+| Graph | Neo4j for social graph + collaborative filtering |
+| ML | ML-powered recommendations, AI content moderation |
+| DevOps | Kubernetes with GitOps (ArgoCD), GitHub Actions CI/CD |
+
+### OpenCubicles (Aug 2022 to May 2023)
+- Smart AC maintenance: Camera feeds, custom FTP server, AWS Lambda pipeline
+- Shopify Builder Plugin: React drag-and-drop, bidirectional iframe communication
+- Real-time analytics: Kafka event processing, Redis caching
+
+### OpenCubicles Intern (Jun 2021 to Aug 2022)
+- Offline-first React Native app: WatermelonDB, facial recognition, barcode scanning
+- Oil industry CRM with eSign integration
+- Backend services: Django, Next.js with CI/CD
+
+---
+
+## Content Rules (Apply to Both Portfolio & Resume)
 
 ### DO Include
 - Backend technologies (databases, queues, caches)
-- System design patterns (partitioning, replication, consistency)
+- System design patterns (partitioning, replication, clustering)
 - Rust-specific details (Tokio, WASM, Extism, Cargo workspaces)
 - Infrastructure (Kubernetes, Terraform, AWS)
 - Quantified achievements (65K users, 57 plugins, 10+ providers)
 - Security implementations (HMAC, JWT, replay prevention)
 
 ### DO NOT Include
-- Frontend work (React, TypeScript UI, CSS) - I didn't work on frontend
-- Client/company names in project descriptions - keep generic
+- Frontend work (React UI, CSS) - focus is backend
+- Client/company names in project descriptions
+- Percentage improvements (e.g., "improved by 50%")
 - Time estimates or deadlines
-- Emojis in content
+- Emojis
 
----
-
-## File Structure
-
-```
-lib/data.ts          # Projects, skills, experience data
-components/intro.tsx # Hero section (name, title, headline)
-components/about.tsx # Bio/about section
-components/project.tsx # Project card component
-```
-
----
-
-## Adding a New Project
-
-### 1. Edit `lib/data.ts`
-
-Add to `projectsData` array:
-
-```typescript
-{
-  title: "Project Name",
-  description: "Technical description focusing on backend architecture, system design patterns, and Rust usage. Include specific technologies and scale metrics.",
-  tags: ["Rust", "Technology2", "Technology3", ...], // 5-7 tags, Rust first if applicable
-}
-```
-
-### 2. Description Guidelines
-
-**Good description pattern:**
-"[Architecture type] with [key technologies]. Features [Rust-specific work], [system design pattern], and [scale metric]."
-
-**Example:**
-"Multi-tenant voice AI platform with HMAC authentication, hash-partitioned PostgreSQL, 57 WASM plugins in Rust (Extism), real-time voice pipeline (Deepgram + ElevenLabs), and multi-LLM orchestration across 10+ providers."
-
-**Highlight these if present:**
-- Rust usage (WASM, Tokio, CLI tools)
-- System design (partitioning, clustering, replication)
-- Scale (users, requests, data volume)
-- Security (auth patterns, encryption)
-
-### 3. Tag Priority Order
-1. Rust / Rust-specific (Tokio, WASM, Extism)
-2. Primary backend framework (FastAPI)
-3. Databases (PostgreSQL, Redis)
-4. Infrastructure (Kubernetes, AWS)
-5. Architecture pattern (System Design, Microservices)
-
----
-
-## Skills Order (in lib/data.ts)
-
-Keep Rust-related skills first:
+### Skills Order (Rust First)
 1. Rust, WebAssembly (WASM), Tokio, Extism
 2. System Design, Distributed Systems, Microservices
 3. Python, FastAPI, PostgreSQL, Redis, Kafka
-4. AWS, Kubernetes, Terraform
+4. AWS, Kubernetes, Terraform, Docker
 5. Security (HMAC, JWT)
 
 ---
 
-## Experience Guidelines
+## Portfolio (Next.js)
 
-When adding new experience to `experiencesData`:
-- Focus on backend/infrastructure achievements
-- Use quantified metrics where possible
-- Mention Rust work prominently
-- Keep descriptions to 2-3 sentences
-- Use `FaServer` icon for backend roles, `CgWorkAlt` for general
+### File Structure
+```
+lib/data.ts            # Projects, skills, experience data
+components/intro.tsx   # Hero section
+components/about.tsx   # Bio section
+components/project.tsx # Project card component
+components/skills.tsx  # Skills section
+components/experience.tsx # Experience timeline
+```
+
+### Projects in Portfolio
+1. **Enterprise Conversational AI Platform** - Current Arrowhead work
+2. **AroundMe** - Location-based social platform (65K+ users)
+3. **Memli** - AI-powered flashcard app with YOLO computer vision
+4. **Rust CLI Tooling** - 7 CLI tools, Tokio, OAuth2
+
+### Theme
+- Dark theme only (no light/dark toggle)
+- Minimal, clean design
+
+### Run Locally
+```bash
+npm run dev
+```
 
 ---
 
-## Updating Hero/About
+## Resume (LaTeX)
 
-### Hero (intro.tsx)
-Keep concise. Pattern:
-"[Role] at [Company], building [focus area] with [languages]. [Key achievement with Rust]. Passionate about [interests]."
+### Files
+```
+resume/resume.tex    # LaTeX source (edit this)
+resume/resume.md     # Markdown version
+resume/resume.pdf    # Generated PDF (gitignored)
+```
 
-### About (about.tsx)
-Three paragraphs:
-1. Background + years experience + languages
-2. Previous role achievements (AroundMe)
-3. Current role achievements (Arrowhead) + Rust focus
+### Compile PDF
+```bash
+cd resume
+pdflatex -interaction=nonstopmode resume.tex
+```
+
+Or with full path:
+```bash
+/usr/local/texlive/2025/bin/universal-darwin/pdflatex -interaction=nonstopmode resume/resume.tex
+```
+
+### Formatting Specs
+| Element | Value |
+|---------|-------|
+| Margins | 0.75 inches all sides |
+| Font | Helvetica (sans-serif) |
+| Bullet spacing | 8pt |
+| Section spacing | 20pt before, 12pt after |
+| Job entry spacing | 14pt |
+| Project spacing | 12pt |
+| Section headers | Bold, ALL CAPS, with underline |
+
+### Resume Sections
+1. Header (name, title, contact info)
+2. Summary (4+ years, Rust, distributed systems)
+3. Skills (categorized: Languages, Rust Ecosystem, Backend, Cloud, Architecture)
+4. Experience (4 entries)
+5. Education (JNTUH, B.Tech ECE, 2018-2022)
+6. Certifications (GitHub Foundations, Microsoft AI, IBM Cloud, Stanford IoT)
+7. Projects (4 entries, matching portfolio)
+
+### Keep Resume & Portfolio in Sync
+- Same projects in both
+- Same skills order (Rust first)
+- Same achievements and metrics
+- Same content rules
 
 ---
 
-## Technical Achievements Reference
+## Education
+**JNTUH, Hyderabad, India**
+Bachelor of Technology, Electronics and Communication Engineering (2018-2022)
 
-Use these details when describing projects:
-
-### Arrowhead (Current)
-- 57 WASM plugins in Rust (Extism framework)
-- 7 Rust CLI tools (Tokio, OAuth2)
-- HMAC-SHA256 with replay attack prevention
-- Hash-partitioned PostgreSQL
-- Multi-LLM orchestration (10+ providers)
-- Real-time voice pipeline (Deepgram, ElevenLabs)
-
-### AroundMe (Previous)
-- Redis cluster (master + 3 slaves)
-- Elasticsearch for geospatial
-- Neo4j for social graph
-- 65K+ users
-- GitOps with ArgoCD
+## Certifications
+- GitHub Foundations - GitHub (Mar 2025)
+- Microsoft AI - Microsoft (Jan 2021)
+- IBM Cloud Essentials - IBM (May 2021)
+- Stanford Internet of Things - Stanford (Jan 2021)

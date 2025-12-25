@@ -34,3 +34,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .env
+
+# resume build artifacts
+resume/*.pdf
+resume/*.aux
+resume/*.log
+resume/*.out
