@@ -122,45 +122,36 @@ npm run dev
 
 ---
 
-## Resume (LaTeX)
+## Resume (Typst)
 
 ### Files
 ```
-resume/resume.tex    # LaTeX source (edit this)
+resume/resume.typ    # Typst source (edit this)
 resume/resume.md     # Markdown version
-resume/resume.pdf    # Generated PDF (gitignored)
+public/resume.pdf    # Generated PDF (served by portfolio)
 ```
+
+### Template
+Uses `@preview/basic-resume:0.2.9` from Typst Universe - ATS-friendly, clean design.
 
 ### Compile PDF
 ```bash
-cd resume
-pdflatex -interaction=nonstopmode resume.tex
+typst compile resume/resume.typ public/resume.pdf
 ```
 
-Or with full path:
+### Watch Mode (auto-recompile on save)
 ```bash
-/usr/local/texlive/2025/bin/universal-darwin/pdflatex -interaction=nonstopmode resume/resume.tex
+typst watch resume/resume.typ public/resume.pdf
 ```
-
-### Formatting Specs
-| Element | Value |
-|---------|-------|
-| Margins | 0.75 inches all sides |
-| Font | Helvetica (sans-serif) |
-| Bullet spacing | 8pt |
-| Section spacing | 20pt before, 12pt after |
-| Job entry spacing | 14pt |
-| Project spacing | 12pt |
-| Section headers | Bold, ALL CAPS, with underline |
 
 ### Resume Sections
 1. Header (name, title, contact info)
 2. Summary (4+ years, Rust, distributed systems)
 3. Skills (categorized: Languages, Rust Ecosystem, Backend, Cloud, Architecture)
-4. Experience (4 entries)
-5. Education (JNTUH, B.Tech ECE, 2018-2022)
+4. Experience (4 entries using `#work()`)
+5. Education (JNTUH, B.Tech ECE, 2018-2022 using `#edu()`)
 6. Certifications (GitHub Foundations, Microsoft AI, IBM Cloud, Stanford IoT)
-7. Projects (4 entries, matching portfolio)
+7. Projects (4 entries using `#project()`, no URLs - private projects)
 
 ### Keep Resume & Portfolio in Sync
 - Same projects in both

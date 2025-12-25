@@ -3,7 +3,7 @@
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "framer-motion";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiOutlineDocumentDownload, HiOutlineMail } from "react-icons/hi";
 import { SiLeetcode } from "react-icons/si";
 
 export default function Intro() {
@@ -91,6 +91,15 @@ export default function Intro() {
         >
           <HiOutlineMail className="text-xl" />
           <span className="text-sm">Email</span>
+        </a>
+        <a
+          href="/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
+        >
+          <HiOutlineDocumentDownload className="text-xl" />
+          <span className="text-sm">Resume</span>
         </a>
       </motion.div>
     </section>
