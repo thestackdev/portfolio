@@ -115,5 +115,5 @@ export const skillsData = {
   Backend: ["FastAPI", "SQLAlchemy", "Temporal"],
   Databases: ["PostgreSQL", "Redis", "Elasticsearch", "Neo4j"],
   Infrastructure: ["AWS", "Kubernetes", "Terraform", "Docker"],
-  Architecture: ["System Design", "Distributed Systems", "Microservices"],
+  Architecture: ["System Design", "Distributed Systems", "Microservices", "Bitemporality"],
 } as const;

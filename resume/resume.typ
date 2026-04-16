@@ -13,15 +13,16 @@
 
 == Summary
 
-Senior Software Development Engineer with 4+ years building distributed systems with Python and Rust. Designed 57 WASM plugins in Rust (Extism), multi-tenant platforms with hash-partitioned PostgreSQL, and real-time AI pipelines. Specialized in backend architecture, system design, and infrastructure at scale.
+Senior Software Development Engineer with 4+ years building distributed systems in Rust and Python. Designed 57 domain-specific WASM plugins (Extism PDK), multi-tenant platforms with hash-partitioned PostgreSQL, multi-region AWS infrastructure (Terraform/Terragrunt), and real-time voice AI pipelines. Specialized in backend architecture, systems programming, and infrastructure at scale.
 
 == Skills
 
 - *Languages:* Rust, Python, TypeScript, SQL
 - *Rust Ecosystem:* Tokio, WebAssembly, Extism, Cargo Workspaces
 - *Backend & Databases:* FastAPI, PostgreSQL, Redis, Elasticsearch, Neo4j, Kafka
-- *Cloud & DevOps:* AWS, Kubernetes, Terraform, Docker, GitHub Actions
-- *Architecture:* System Design, Distributed Systems, Microservices
+- *Cloud & DevOps:* AWS, Kubernetes, Terraform, Terragrunt, Docker, GitHub Actions
+- *ML & Inference:* LLM Fine-tuning, QLoRA, ONNX, HuggingFace Transformers, PEFT
+- *Architecture:* System Design, Distributed Systems, Microservices, Bitemporality
 
 == Experience
 
@@ -31,11 +32,13 @@ Senior Software Development Engineer with 4+ years building distributed systems 
   dates: "Mar 2025 - Present",
   location: "Bangalore, India",
 )
-- Architecting conversational AI platform with 57 WASM plugins in Rust (Extism framework)
-- Built 7 Rust CLI tools with Tokio async runtime for deployment automation and plugin management
-- Designed multi-tenant API with hash-partitioned PostgreSQL and HMAC authentication with replay attack prevention
-- Real-time voice pipeline with Deepgram STT, ElevenLabs TTS, multi-LLM orchestration (10+ providers)
-- Multi-region AWS infrastructure with Kubernetes deployment
+- Designed 57 production Rust WASM plugins (Extism PDK) for a voice AI calling platform across insurance, pharma, diagnostics, and debt collection verticals — with pre-call data enrichment, live LLM tool-calling, and post-call processing hooks
+- Built a Rust CLI toolchain (Tokio, Clap) for internal infrastructure operations, including a multi-region Kubernetes proxy that tunnels EKS, Aurora PostgreSQL, ElastiCache Redis, and VictoriaLogs across US and India environments
+- Integrated 5 telephony providers with Temporal workflow orchestration for outbound voice campaign scheduling, call reconciliation, and disposition tracking
+- Built real-time voice pipeline with Deepgram STT, ElevenLabs TTS, and Speechmatics; added smart turn detection and LLM-based PII redaction; orchestrates 10+ LLM providers via LiteLLM
+- Fine-tuned LLMs (Gemma 3, MuRIL) for multilingual intent classification to enable predictive response caching in the voice pipeline, reducing perceived latency by pre-computing LLM responses before the user finishes speaking
+- Designed multi-tenant API with hash-partitioned PostgreSQL, HMAC-SHA256 request signing with nonce-based replay attack prevention, and JWT blacklisting
+- Provisioned India (ap-south-1) AWS infrastructure from scratch with Terraform/Terragrunt — EKS, Aurora PostgreSQL, ElastiCache Redis, ECR — deploying 6 microservices across dev and prod alongside the existing US region
 
 #work(
   title: "Founding Engineer & Head of Technology",
@@ -89,7 +92,7 @@ Senior Software Development Engineer with 4+ years building distributed systems 
   name: "Enterprise Conversational AI Platform",
   dates: "2025",
 )
-- Multi-tenant voice AI platform with HMAC authentication, hash-partitioned PostgreSQL, 57 WASM plugins in Rust (Extism), real-time voice pipeline (Deepgram + ElevenLabs), and multi-LLM orchestration across 10+ providers.
+- Production voice AI calling platform: 57 Rust WASM plugins (Extism PDK) across insurance, pharma, and diagnostics verticals; 5 telephony provider integrations with Temporal workflow orchestration; real-time STT/TTS pipeline with smart turn detection and LLM-based PII redaction; HMAC-SHA256 auth with replay prevention; multi-LLM orchestration across 10+ providers; multi-region AWS (us-east-1, ap-south-1) with Terraform/Terragrunt.
 
 #project(
   name: "AroundMe - Location-Based Social Platform",
