@@ -1,0 +1,27 @@
+name: Deploy to aws s3
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  aws-sts-assume:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::949530157299:role/thestackdev-dev-github_actions
+          aws-region: ap-south-1
+          role-session-name: GitHubActionsSTSSession
+
+      - name: Verify AWS STS Identity
+        run: |
+          aws sts get-caller-identity

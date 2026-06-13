@@ -12,8 +12,6 @@ export const metadata = {
     "Senior Software Development Engineer specializing in Rust, distributed systems, and backend architecture.",
 };
 
-export const runtime = "edge";
-
 export default function RootLayout({
   children,
 }: {
