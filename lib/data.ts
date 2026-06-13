@@ -30,7 +30,7 @@ export const experiencesData = [
     title: "Senior Software Development Engineer",
     location: "Arrowhead",
     description:
-      "Architecting conversational AI platform with 57 WASM plugins in Rust (Extism), 7 Rust CLI tools with Tokio, real-time voice processing, multi-LLM orchestration (10+ providers), and multi-region AWS infrastructure with Kubernetes.",
+      "Architecting conversational AI platform with 57 WASM plugins in Rust (Extism), 7 Rust CLI tools with Tokio, heartbeat-driven scheduler scaled to 10,000 concurrent executions, bi-temporal billing system, cell-based multi-tenant architecture, real-time voice processing, multi-LLM orchestration (10+ providers), and multi-region AWS infrastructure with Kubernetes.",
     icon: React.createElement(FaServer),
     date: "Mar 2025 - Present",
   },
@@ -64,7 +64,7 @@ export const projectsData = [
   {
     title: "Enterprise Conversational AI Platform",
     description:
-      "Multi-tenant voice AI platform with HMAC authentication, hash-partitioned PostgreSQL, 57 WASM plugins in Rust (Extism), real-time voice pipeline (Deepgram + ElevenLabs), and multi-LLM orchestration across 10+ providers.",
+      "Multi-tenant voice AI platform with HMAC authentication, hash-partitioned PostgreSQL, 57 WASM plugins in Rust (Extism), heartbeat-driven scheduler scaled to 10,000 concurrent executions, bi-temporal billing, cell-based multi-tenant scaling, real-time voice pipeline (Deepgram + ElevenLabs), and multi-LLM orchestration across 10+ providers.",
     tags: [
       "Python",
       "Rust",

@@ -38,6 +38,9 @@ Senior Software Development Engineer with 4+ years building distributed systems 
 - Built real-time voice pipeline with Deepgram STT, ElevenLabs TTS, and Speechmatics; added smart turn detection and LLM-based PII redaction; orchestrates 10+ LLM providers via LiteLLM
 - Fine-tuned LLMs (Gemma 3, MuRIL) for multilingual intent classification to enable predictive response caching in the voice pipeline, reducing perceived latency by pre-computing LLM responses before the user finishes speaking
 - Designed multi-tenant API with hash-partitioned PostgreSQL, HMAC-SHA256 request signing with nonce-based replay attack prevention, and JWT blacklisting
+- Scaled heartbeat-driven scheduler (picks and executes outbound calls) from 1,000 to 10,000 concurrent executions through async task queue redesign and worker pool tuning
+- Built bi-temporal billing system tracking both valid-time and transaction-time, enabling accurate retroactive corrections and audit-safe charge history
+- Implemented cell-based multi-tenant architecture isolating tenant workloads into independent cells for fault containment and horizontal scaling
 - Provisioned India (ap-south-1) AWS infrastructure from scratch with Terraform/Terragrunt — EKS, Aurora PostgreSQL, ElastiCache Redis, ECR — deploying 6 microservices across dev and prod alongside the existing US region
 
 #work(

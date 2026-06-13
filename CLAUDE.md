@@ -36,6 +36,9 @@
 |-------------|---------|
 | WASM Plugins | 57 domain-specific plugins in Rust using Extism framework |
 | Rust CLI Tools | 7 CLI tools with Tokio async runtime, OAuth2, builder-pattern HTTP client |
+| Scheduler Scaling | Heartbeat-driven scheduler that picks and executes calls; scaled from 1,000 to 10,000 concurrent executions |
+| Bi-Temporal Billing | Billing system with bi-temporal data modeling (valid-time + transaction-time) |
+| Cell-Based Multi-Tenancy | Cell-based architecture for multi-tenant scaling |
 | Multi-Tenant API | Hash-partitioned PostgreSQL, composite primary keys for tenant isolation |
 | Authentication | HMAC-SHA256 with replay attack prevention (nonce store), JWT blacklisting |
 | Voice Pipeline | Real-time with Deepgram STT, ElevenLabs TTS |
