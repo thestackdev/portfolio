@@ -1,4 +1,4 @@
-name: Deploy to aws s3
+name: Deploy Portfolio to S3
 
 on:
   push:
@@ -9,19 +9,32 @@ permissions:
   contents: read
 
 jobs:
-  aws-sts-assume:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::949530157299:role/thestackdev-dev-github_actions
           aws-region: ap-south-1
-          role-session-name: GitHubActionsSTSSession
+          role-session-name: GitHubActionsSession
 
-      - name: Verify AWS STS Identity
-        run: |
-          aws sts get-caller-identity
+      - name: Sync to S3
+        run: aws s3 sync out/ s3://thestackdev-portfolio-dev --delete
