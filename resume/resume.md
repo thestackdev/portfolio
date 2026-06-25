@@ -4,7 +4,7 @@
 
 7995235525 | shanmukeshwar03@gmail.com | Bangalore, India | Open to Relocate
 
-[Portfolio](https://shanmukeshwar.dev) | [LinkedIn](https://linkedin.com/in/shanmukeshwar) | [GitHub](https://github.com/thestackdev) | [LeetCode](https://leetcode.com/u/shanmukeshwar/)
+[Portfolio](https://thestackdev.github.io/portfolio) | [LinkedIn](https://linkedin.com/in/shanmukeshwar) | [GitHub](https://github.com/thestackdev) | [LeetCode](https://leetcode.com/u/shanmukeshwar/)
 
 ---
 

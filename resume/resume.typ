@@ -6,7 +6,7 @@
   github: "github.com/thestackdev",
   linkedin: "linkedin.com/in/shanmukeshwar",
   phone: "+91 7995235525",
-  personal-site: "shanmukeshwar.dev",
+  personal-site: "thestackdev.github.io/portfolio",
   accent-color: "#0066cc",
   font: "New Computer Modern",
 )
@@ -85,9 +85,9 @@ Senior Software Development Engineer with 4+ years building distributed systems 
 == Certifications
 
 - #link("https://www.credly.com/badges/ef599cbf-bd2b-4217-87d2-608ba9da1b52")[GitHub Foundations], GitHub (Mar 2025)
-- #link("https://shanmukeshwar.dev/Microsoft_AI.pdf")[Microsoft AI], Microsoft (Jan 2021)
+- #link("https://thestackdev.github.io/portfolio/Microsoft_AI.pdf")[Microsoft AI], Microsoft (Jan 2021)
 - #link("https://courses.cognitiveclass.ai/certificates/b9cb5c2a1225406696cd2dc01c1003a9")[IBM Cloud Essentials], IBM (May 2021)
-- #link("https://shanmukeshwar.dev/STANFORD_IOT.pdf")[Stanford Internet of Things], Stanford (Jan 2021)
+- #link("https://thestackdev.github.io/portfolio/STANFORD_IOT.pdf")[Stanford Internet of Things], Stanford (Jan 2021)
 
 == Projects
 

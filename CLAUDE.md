@@ -7,7 +7,7 @@
 - Email: shanmukeshwar03@gmail.com
 - Phone: 7995235525
 - Location: Bangalore, India (Open to Relocate)
-- Portfolio: https://shanmukeshwar.dev
+- Portfolio: https://thestackdev.github.io/portfolio
 - LinkedIn: https://linkedin.com/in/shanmukeshwar
 - GitHub: https://github.com/thestackdev
 
