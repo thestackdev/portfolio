@@ -93,7 +93,7 @@ export default function Intro() {
           <span className="text-sm">Email</span>
         </a>
         <a
-          href="/resume.pdf"
+          href="/portfolio/resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-text-muted transition-colors hover:text-text-primary"
