@@ -13,16 +13,15 @@
 
 == Summary
 
-Senior Software Development Engineer with 4+ years building distributed systems in Rust and Python. Designed 57 domain-specific WASM plugins (Extism PDK), multi-tenant platforms with hash-partitioned PostgreSQL, multi-region AWS infrastructure (Terraform/Terragrunt), and real-time voice AI pipelines. Specialized in backend architecture, systems programming, and infrastructure at scale.
+Backend and distributed-systems engineer working primarily in Rust. Built production Rust WASM plugins (Extism), a real-time voice AI pipeline, and multi-tenant platforms on hash-partitioned PostgreSQL within a cell-based, multi-region architecture. Comfortable at the systems level with async runtimes (Tokio), WebAssembly, columnar data (Apache Arrow, Parquet, DataFusion), and object-storage-backed query engines.
 
 == Skills
 
 - *Languages:* Rust, Python, TypeScript, SQL
-- *Rust Ecosystem:* Tokio, WebAssembly, Extism, Cargo Workspaces
-- *Backend & Databases:* FastAPI, PostgreSQL, Redis, Elasticsearch, Neo4j, Kafka
-- *Cloud & DevOps:* AWS, Kubernetes, Terraform, Terragrunt, Docker, GitHub Actions
-- *ML & Inference:* LLM Fine-tuning, QLoRA, ONNX, HuggingFace Transformers, PEFT
-- *Architecture:* System Design, Distributed Systems, Microservices, Bitemporality
+- *Rust & Systems:* Tokio, Multithreading & Concurrency, WebAssembly (Extism), Apache Arrow, DataFusion, Zero-Copy Parsing, Cargo Workspaces
+- *Data & Storage:* Parquet, Columnar Analytics, PostgreSQL, Redis, Kafka, Elasticsearch, Object Storage
+- *Cloud & Observability:* AWS, Kubernetes, Terraform, Terragrunt, Docker, OpenTelemetry, VictoriaLogs/Grafana
+- *Architecture:* Distributed Systems, System Design, Microservices, WAL / Columnar Storage, Bi-Temporal Modeling, LiteLLM
 
 == Experience
 
@@ -32,16 +31,12 @@ Senior Software Development Engineer with 4+ years building distributed systems 
   dates: "Mar 2025 - Present",
   location: "Bangalore, India",
 )
-- Designed 57 production Rust WASM plugins (Extism PDK) for a voice AI calling platform across insurance, pharma, diagnostics, and debt collection verticals — with pre-call data enrichment, live LLM tool-calling, and post-call processing hooks
-- Built a Rust CLI toolchain (Tokio, Clap) for internal infrastructure operations, including a multi-region Kubernetes proxy that tunnels EKS, Aurora PostgreSQL, ElastiCache Redis, and VictoriaLogs across US and India environments
-- Integrated 5 telephony providers with Temporal workflow orchestration for outbound voice campaign scheduling, call reconciliation, and disposition tracking
-- Built real-time voice pipeline with Deepgram STT, ElevenLabs TTS, and Speechmatics; added smart turn detection and LLM-based PII redaction; orchestrates 10+ LLM providers via LiteLLM
-- Fine-tuned LLMs (Gemma 3, MuRIL) for multilingual intent classification to enable predictive response caching in the voice pipeline, reducing perceived latency by pre-computing LLM responses before the user finishes speaking
-- Designed multi-tenant API with hash-partitioned PostgreSQL, HMAC-SHA256 request signing with nonce-based replay attack prevention, and JWT blacklisting
-- Scaled heartbeat-driven scheduler (picks and executes outbound calls) from 1,000 to 10,000 concurrent executions through async task queue redesign and worker pool tuning
-- Built bi-temporal billing system tracking both valid-time and transaction-time, enabling accurate retroactive corrections and audit-safe charge history
-- Implemented cell-based multi-tenant architecture isolating tenant workloads into independent cells for fault containment and horizontal scaling
-- Provisioned India (ap-south-1) AWS infrastructure from scratch with Terraform/Terragrunt — EKS, Aurora PostgreSQL, ElastiCache Redis, ECR — deploying 6 microservices across dev and prod alongside the existing US region
+- Designed 10+ production Rust WASM plugins (Extism PDK) for a multi-tenant voice AI platform, powering pre-call data enrichment, live LLM tool-calling, and post-call processing hooks
+- Architected a cell-based, multi-region platform inspired by AWS cell-based architecture, isolating tenant workloads into 10+ independent cells for blast-radius containment and horizontal scaling; provisioned each cell from scratch with Terraform/Terragrunt (Kubernetes, PostgreSQL, Redis, container registry)
+- Raised the heartbeat-driven scheduler's sustained throughput roughly 10x (to 10,000 concurrent outbound executions) by redesigning the async task queue and sharding hot-path state to remove lock contention across Tokio's multithreaded runtime
+- Built the multi-tenant data layer on hash-partitioned PostgreSQL with HMAC-SHA256 request signing (nonce-based replay prevention) and JWT blacklisting, plus a bi-temporal billing system tracking valid-time and transaction-time for audit-safe, retroactively correctable charge history
+- Built a Rust CLI toolchain (Tokio, Clap) for infrastructure operations, including a multi-region Kubernetes proxy for centralized access to logs, metrics, and traces across the observability stack; drove multi-region cost optimization through right-sizing, autoscaling, and spot/reserved capacity
+- Built a real-time voice pipeline (streaming STT/TTS, smart turn detection, LLM-based PII redaction) orchestrating 10+ LLM providers via LiteLLM and 5 telephony integrations via Temporal workflows; fine-tuned open-source models for predictive response caching to cut perceived latency
 
 #work(
   title: "Founding Engineer & Head of Technology",
@@ -61,7 +56,6 @@ Senior Software Development Engineer with 4+ years building distributed systems 
   location: "Hyderabad, India",
 )
 - Built smart AC maintenance system with camera feeds, custom FTP server, and AWS Lambda pipeline for automated fault detection
-- Developed Shopify Builder Plugin with React drag-and-drop interface and bidirectional cross-iframe communication
 - Implemented Kafka event processing and Redis caching for real-time analytics
 
 #work(
@@ -70,9 +64,7 @@ Senior Software Development Engineer with 4+ years building distributed systems 
   dates: "Jun 2021 - Aug 2022",
   location: "Hyderabad, India",
 )
-- Built offline-first React Native app for solar installations with WatermelonDB, facial recognition, and barcode scanning
-- Developed oil industry CRM with integrated eSign and collaboration tools
-- Created backend services with Django and Next.js with CI/CD pipelines
+- Built backend services (Django, Next.js) with CI/CD pipelines and offline-first data sync for field applications
 
 == Education
 
@@ -85,32 +77,17 @@ Senior Software Development Engineer with 4+ years building distributed systems 
 == Certifications
 
 - #link("https://www.credly.com/badges/ef599cbf-bd2b-4217-87d2-608ba9da1b52")[GitHub Foundations], GitHub (Mar 2025)
-- #link("https://thestackdev.github.io/portfolio/Microsoft_AI.pdf")[Microsoft AI], Microsoft (Jan 2021)
-- #link("https://courses.cognitiveclass.ai/certificates/b9cb5c2a1225406696cd2dc01c1003a9")[IBM Cloud Essentials], IBM (May 2021)
-- #link("https://thestackdev.github.io/portfolio/STANFORD_IOT.pdf")[Stanford Internet of Things], Stanford (Jan 2021)
 
 == Projects
 
 #project(
-  name: "Enterprise Conversational AI Platform",
+  name: "Columnar Observability Query Engine",
   dates: "2025",
 )
-- Production voice AI calling platform: 57 Rust WASM plugins (Extism PDK) across insurance, pharma, and diagnostics verticals; 5 telephony provider integrations with Temporal workflow orchestration; real-time STT/TTS pipeline with smart turn detection and LLM-based PII redaction; HMAC-SHA256 auth with replay prevention; multi-LLM orchestration across 10+ providers; multi-region AWS (us-east-1, ap-south-1) with Terraform/Terragrunt.
+- Log-analytics engine in Rust: ingests structured logs over HTTP with zero-copy JSON parsing, buffers through a write-ahead log, and flushes time-partitioned Apache Parquet to object storage. Exposes SQL over the columnar store via a custom Apache Arrow DataFusion `TableProvider` with predicate and projection pushdown to the Parquet scan layer. Achieves 40x compression over raw JSON and sub-second aggregation across millions of rows.
 
 #project(
-  name: "AroundMe - Location-Based Social Platform",
-  dates: "2024",
-)
-- Founded and architected distributed backend with FastAPI, PostgreSQL, Redis cluster, Elasticsearch for geospatial queries, Neo4j for social graph, and ML-powered recommendations. Led team of 10. Scaled to 65K+ downloads.
-
-#project(
-  name: "Memli - AI-Powered Flashcard App",
-  dates: "2023",
-)
-- React Native learning app with ML-generated mnemonics and YOLO computer vision to detect and explain textbook images. Built intelligent quiz system with personalized assessments and spaced repetition.
-
-#project(
-  name: "Rust CLI Tooling",
+  name: "Distributed Raft Key-Value Store",
   dates: "2025",
 )
-- Cargo workspace with 7 CLI tools for deployment automation and plugin management. Features Tokio async runtime, Google OAuth2 with token persistence, builder-pattern HTTP client, and unified error handling.
+- Distributed key-value store in Rust built on Raft consensus for leader election and a replicated log across a cluster. Writes are durably appended to a write-ahead log and applied to a log-structured (LSM) storage engine with background compaction; periodic snapshots bound log growth and speed recovery. Provides linearizable reads and automatic failover under node crashes and network partitions.

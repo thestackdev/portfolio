@@ -21,6 +21,7 @@
 - Rust (WASM plugins, CLI tools, systems programming)
 - System Design & Distributed Systems
 - Backend Architecture at Scale
+- Data-intensive & observability systems (columnar storage, Apache Arrow/DataFusion, Parquet)
 
 **Languages:** Rust (primary), Python (secondary), TypeScript
 
@@ -34,16 +35,18 @@
 
 | Achievement | Details |
 |-------------|---------|
-| WASM Plugins | 57 domain-specific plugins in Rust using Extism framework |
+| WASM Plugins | 10+ domain-specific plugins in Rust using Extism framework |
 | Rust CLI Tools | 7 CLI tools with Tokio async runtime, OAuth2, builder-pattern HTTP client |
 | Scheduler Scaling | Heartbeat-driven scheduler that picks and executes calls; scaled from 1,000 to 10,000 concurrent executions |
 | Bi-Temporal Billing | Billing system with bi-temporal data modeling (valid-time + transaction-time) |
-| Cell-Based Multi-Tenancy | Cell-based architecture for multi-tenant scaling |
+| Cell-Based Multi-Tenancy | Cell-based, multi-region architecture (inspired by AWS cell-based architecture) isolating tenant workloads into 10+ independent cells for blast-radius containment and horizontal scaling |
 | Multi-Tenant API | Hash-partitioned PostgreSQL, composite primary keys for tenant isolation |
 | Authentication | HMAC-SHA256 with replay attack prevention (nonce store), JWT blacklisting |
 | Voice Pipeline | Real-time with Deepgram STT, ElevenLabs TTS |
 | LLM Orchestration | 10+ providers via LiteLLM |
-| Infrastructure | Multi-region AWS, Kubernetes deployment |
+| Infrastructure | Multi-region AWS across 10+ regions/cells, Kubernetes, Terraform/Terragrunt |
+| Observability | Multi-region VictoriaLogs/VictoriaMetrics stack; Rust CLI proxy for centralized log/metric/trace access across US and India |
+| Cost Optimization | Instance right-sizing, cluster autoscaling, spot/reserved instances, predictive LLM response caching to eliminate redundant inference calls |
 
 ### AroundMe (Closed - Jun 2024 to Mar 2025)
 
@@ -77,7 +80,7 @@
 - System design patterns (partitioning, replication, clustering)
 - Rust-specific details (Tokio, WASM, Extism, Cargo workspaces)
 - Infrastructure (Kubernetes, Terraform, AWS)
-- Quantified achievements (65K users, 57 plugins, 10+ providers)
+- Quantified achievements (65K users, 10+ plugins, 10+ providers)
 - Security implementations (HMAC, JWT, replay prevention)
 
 ### DO NOT Include
@@ -87,12 +90,12 @@
 - Time estimates or deadlines
 - Emojis
 
-### Skills Order (Rust First)
-1. Rust, WebAssembly (WASM), Tokio, Extism
-2. System Design, Distributed Systems, Microservices
-3. Python, FastAPI, PostgreSQL, Redis, Kafka
-4. AWS, Kubernetes, Terraform, Docker
-5. Security (HMAC, JWT)
+### Skills Structure (5 Categories, Rust First)
+Condensed to 5 strong categories for visibility (not 6+). Keep this structure synced across `resume.typ`, `resume.md`, and `lib/data.ts`:
+1. **Languages:** Rust, Python, TypeScript, SQL
+2. **Rust & Systems:** Tokio, Multithreading & Concurrency, WebAssembly (Extism), Apache Arrow, DataFusion, Zero-Copy Parsing, Cargo Workspaces
+3. **Data & Storage:** Parquet, Columnar Analytics, PostgreSQL, Redis, Kafka, Elasticsearch, Object Storage4. **Cloud & Observability:** AWS, Kubernetes, Terraform, Terragrunt, Docker, OpenTelemetry, VictoriaLogs/Grafana
+5. **Architecture:** Distributed Systems, System Design, Microservices, WAL / Columnar Storage, Bi-Temporal Modeling, LiteLLM
 
 ---
 
@@ -109,10 +112,10 @@ components/experience.tsx # Experience timeline
 ```
 
 ### Projects in Portfolio
-1. **Enterprise Conversational AI Platform** - Current Arrowhead work
-2. **AroundMe** - Location-based social platform (65K+ users)
-3. **Memli** - AI-powered flashcard app with YOLO computer vision
-4. **Rust CLI Tooling** - 7 CLI tools, Tokio, OAuth2
+1. **Columnar Observability Query Engine** - Rust log-analytics engine on Apache Arrow/DataFusion + Parquet + object storage
+2. **Distributed Raft Key-Value Store** - Replicated KV store in Rust with Raft consensus, WAL, and LSM storage engine
+
+Note: Projects are standalone/side projects, kept distinct from the Experience section. Do not re-list current or past employers (e.g., Arrowhead voice AI platform, AroundMe) as projects.
 
 ### Theme
 - Dark theme only (no light/dark toggle)
@@ -149,12 +152,12 @@ typst watch resume/resume.typ public/resume.pdf
 
 ### Resume Sections
 1. Header (name, title, contact info)
-2. Summary (4+ years, Rust, distributed systems)
+2. Summary (Rust, distributed systems; no years-of-experience count — lead with concrete work)
 3. Skills (categorized: Languages, Rust Ecosystem, Backend, Cloud, Architecture)
 4. Experience (4 entries using `#work()`)
 5. Education (JNTUH, B.Tech ECE, 2018-2022 using `#edu()`)
-6. Certifications (GitHub Foundations, Microsoft AI, IBM Cloud, Stanford IoT)
-7. Projects (4 entries using `#project()`, no URLs - private projects)
+6. Certifications (GitHub Foundations only; 2021 intro MOOCs omitted from the systems-targeted résumé)
+7. Projects (2 entries using `#project()`, no URLs - private projects)
 
 ### Keep Resume & Portfolio in Sync
 - Same projects in both
@@ -169,7 +172,6 @@ typst watch resume/resume.typ public/resume.pdf
 Bachelor of Technology, Electronics and Communication Engineering (2018-2022)
 
 ## Certifications
-- GitHub Foundations - GitHub (Mar 2025)
-- Microsoft AI - Microsoft (Jan 2021)
-- IBM Cloud Essentials - IBM (May 2021)
-- Stanford Internet of Things - Stanford (Jan 2021)
+Held (for reference): GitHub Foundations (Mar 2025), Microsoft AI (Jan 2021), IBM Cloud Essentials (May 2021), Stanford Internet of Things (Jan 2021).
+
+On the systems-targeted résumé/portfolio, list ONLY GitHub Foundations. The three 2021 intro MOOCs are omitted: on a senior systems resume they read as padding and lower perceived seniority.

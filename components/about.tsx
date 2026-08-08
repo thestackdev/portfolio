@@ -20,9 +20,8 @@ export default function About() {
 
       <div className="space-y-4 leading-relaxed">
         <p>
-          After graduating in Electronics Engineering, I've spent{" "}
-          <span className="text-text-primary">4+ years</span> building systems
-          at scale with <span className="text-text-primary">Python</span> and{" "}
+          After graduating in Electronics Engineering, I've been building
+          systems at scale with <span className="text-text-primary">Python</span> and{" "}
           <span className="text-text-primary">Rust</span>.
         </p>
 
