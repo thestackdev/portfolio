@@ -31,9 +31,16 @@ export default function Experience() {
               </div>
               <span className="text-sm text-text-muted">{item.date}</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-text-secondary">
-              {item.description}
-            </p>
+            <ul className="mt-3 space-y-1.5">
+              {item.bullets.map((bullet, i) => (
+                <li
+                  key={i}
+                  className="relative pl-4 text-sm leading-relaxed text-text-secondary before:absolute before:left-0 before:text-text-muted before:content-['•']"
+                >
+                  {bullet}
+                </li>
+              ))}
+            </ul>
           </motion.div>
         ))}
       </div>
