@@ -32,7 +32,7 @@ Senior software engineer working in Rust and Python on backend and distributed s
 - Scaled the heartbeat-driven call scheduler from 1,000 to 10,000 concurrent call executions, processing ~1M calls/day: sharded hot-path state to reduce lock contention across Tokio worker threads
 - Built the billing system on a bi-temporal model
 - Built the WASM plugin system on Extism: 10+ hot-swappable plugins in Rust for pre-call enrichment, live LLM tool-calling, and post-call hooks
-- Split the platform into 10+ cells across AWS regions, provisioned with Terraform and Terragrunt. Istio routed each tenant to its own cell
+- Split the platform into 10+ cells across AWS regions, provisioned with Terraform and Terragrunt. Istio handled routing across the cell fleet
 - Built the WebRTC voice layer and the streaming STT/TTS pipeline with turn detection and PII redaction
 - Integrated 5 telephony providers and 10+ LLM providers via LiteLLM, and ran post-call processing on Temporal workflows
 - Wrote the customer and billing report jobs: streamed Redshift aggregates and Aurora rows through a fixed-size buffer and aggregated into a temporary file, keeping memory bounded on multi-hour runs
@@ -49,7 +49,7 @@ Senior software engineer working in Rust and Python on backend and distributed s
 - Built the chat server as a separate WebSocket service, with Redis pub/sub for cross-instance fanout
 - Routed notifications through Kafka: in-app when the recipient was connected, APNs or FCM otherwise
 - Served proximity queries from PostgreSQL with PostGIS and GiST indexes
-- Built the FastAPI backend, with Redis (one primary, 3 replicas) and Neo4j for the social graph
+- Built the FastAPI backend, with Redis (1 primary, 3 replicas) and Neo4j for the social graph
 - Ran the backend as microservices on Kubernetes with ArgoCD GitOps
 
 ### Software Development Engineer
@@ -72,12 +72,12 @@ Senior software engineer working in Rust and Python on backend and distributed s
 ## Projects
 
 ### Roaring Bitmaps (Rust)
-Roaring bitmap implementation in Rust: 65,536-element blocks, switching between sorted-array and dense-bitmap storage at the 4,096-element threshold. Within ~10% of croaring on union/intersection benchmarks. Criterion benchmarks.
+Roaring bitmap implementation in Rust for set-membership checks over large datasets, part of a columnar-storage optimization path. 65,536-element blocks, switching between sorted-array and dense-bitmap storage at the 4,096-element threshold.
 
 **Tech:** Rust, Data Structures, Compressed Bitmaps, Criterion Benchmarks
 
 ### Lox Interpreter (Rust)
-Lox interpreter in Rust, no external crates: lexer, recursive-descent parser with precedence climbing, tree-walking evaluator with lexical scoping, closures, and class inheritance.
+Lox interpreter in Rust, no external crates: hand-written lexer, recursive-descent parser with precedence climbing, tree-walking evaluator with lexical scoping.
 
 **Tech:** Rust, Interpreter Design, Recursive Descent
 

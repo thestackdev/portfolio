@@ -156,9 +156,10 @@ components/experience.tsx # Experience timeline
 
 ### Projects in Portfolio
 1. **Roaring Bitmaps** - Rust implementation of the compressed bitmap structure (adaptive array/bitmap containers, 4096-element threshold). 262 lines, 13 tests, no runtime deps, criterion benches. Public repo: https://github.com/thestackdev/roaring-bitmaps
-   - Set operations (union/intersection) are now implemented and benchmarked against croaring - within ~10% (owner update, 2026-09-14). The earlier "insert/contains/remove only" restriction no longer applies.
+   - Do NOT add performance comparisons against croaring or other libraries. A croaring benchmark claim was dictated and then pulled the same day (2026-09-14) - it is not on the resume and should not come back without the owner saying so.
    - NEVER list what a project does not implement on the résumé. Omitting an unbuilt feature is correct; advertising the omission ("no run containers or set operations yet") is not. Describe what was built; say nothing about the rest.
-2. **Lox Language Interpreter** - Tree-walking Lox interpreter in Rust, no external crates (hand-written lexer, recursive-descent parser with precedence climbing, AST evaluator over a scope stack; closures and class inheritance). Public repo: https://github.com/thestackdev/lox-rs
+2. **Lox Language Interpreter** - Tree-walking Lox interpreter in Rust, no external crates (hand-written lexer, recursive-descent parser with precedence climbing, AST evaluator over a scope stack). Public repo: https://github.com/thestackdev/lox-rs
+   - Closures and class inheritance were added to the copy and then pulled the same day (2026-09-14). Do not reintroduce without the owner saying so.
 
 Accuracy note: the LEXER is hand-written; the PARSER is recursive-descent. Never write "recursive-descent lexer" - recursive descent is a parsing technique and a specialist catches the error instantly.
 
